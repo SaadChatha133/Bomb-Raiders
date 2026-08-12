@@ -12,6 +12,12 @@ find_package(SFML 3 COMPONENTS Graphics Window System REQUIRED)
 
 add_executable(BombRaiders
     src/main.cpp
+    src/Level.cpp
+    src/Player.cpp
+)
+
+target_include_directories(BombRaiders PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
 )
 
 target_link_libraries(BombRaiders PRIVATE
