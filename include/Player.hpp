@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 
 
+class Level;
+
+
 class Player
 {
 public:
@@ -10,10 +13,19 @@ public:
 
     Player();
 
-    void update(sf::Time deltaTime);
+    void update(
+        sf::Time deltaTime,
+        const Level& level
+    );
+
     void draw(sf::RenderWindow& window);
 
 
 private:
     sf::RectangleShape playerShape;
+
+    bool canMoveTo(
+        sf::Vector2f newPosition,
+        const Level& level
+    ) const;
 };

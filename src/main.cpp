@@ -16,17 +16,26 @@ void processEvents(sf::RenderWindow& window)
 }
 
 
-void update(sf::Time deltaTime, Player& player)
+void update(
+    sf::Time deltaTime,
+    Player& player,
+    const Level& level
+)
 {
-    player.update(deltaTime);
+    player.update(deltaTime, level);
 }
 
 
-void render(sf::RenderWindow& window, Level& level, Player& player)
+void render(
+    sf::RenderWindow& window,
+    Level& level,
+    Player& player
+)
 {
     window.clear(sf::Color(30, 30, 30));
 
     level.draw(window);
+
     player.draw(window);
 
     window.display();
@@ -40,9 +49,12 @@ int main()
         "Bomb Raiders"
     );
 
+
     window.setFramerateLimit(30);
 
+
     sf::Clock clock;
+
 
     Level level;
     Player player;
@@ -52,11 +64,22 @@ int main()
     {
         sf::Time deltaTime = clock.restart();
 
+
         processEvents(window);
 
-        update(deltaTime, player);
 
-        render(window, level, player);
+        update(
+            deltaTime,
+            player,
+            level
+        );
+
+
+        render(
+            window,
+            level,
+            player
+        );
     }
 
 

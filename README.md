@@ -20,7 +20,7 @@ Bomb Raiders is a 2D single-player bombing game developed in C++ as a personal g
 - ✅ **Game loop**
 - ✅ **Grid / level system**
 - ✅ **Player movement**
-- ⬜ **Collision detection**
+- ✅ **Collision detection**
 
 ### Phase 3 — Bomb Gameplay
 - ⬜ **Breakable / unbreakable blocks**
